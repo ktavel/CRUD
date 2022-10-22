@@ -23,6 +23,8 @@
     <body>
         <div class="container">
 
+			
+
             <!-- <h1>The Bike Shop of Birmingham</h1> -->
         <!-- <h2>Variety of Bikes</h2> -->
         </div>
@@ -58,7 +60,7 @@
 
 
 
-    <table class="table">
+    <table class="list" id="bike list">
         <thread>
             <tr>
                 <th scope="col">Type</th>
@@ -83,8 +85,62 @@
                 <td>Adult/Kid</td>
                 <td>Adult</td>
             </tr>
+			
+			<table>
+				<tr>
+					<td>
+						<form onsubmit="event.preventDefault();onFormSubmit();">
+							<div>
+							<label>Type</label>
+							<input type="text" name="bikeName">
+							</div>
+							<div>
+								<label>Mountain</label>
+								<input type="text" name="attribute">
+								</div>
+
+							</form>
+							<form onsubmit="event.preventDefault();onFormSubmit();">
+							<div>
+								<label>Road</label>
+								<input type="text" name="feature">
+								</div>
+								<div>
+									<label>Electric</label>
+									<input type="text" name="quality">
+									</div>
+									<div>
+										<label>Hybird</label>
+										<input type="text" name="trait">
+										</div>
+
+										
+									<input type="submit" value="Submit">
+								</div>
+								</form>
+							
+					</td>
+					<!-- <td>
+						<table class="list">
+							<thead>
+								<tr>
+									<th>Type</th>
+									<th>Mountain</th>
+									<th>Road</th>
+									<th>Hybird</th>
+									<th>Electric</th>
+									<th></th>
+								</tr>
+							</thead> -->
+						</table>
+					</td>
+				</tr>
+			</table>
+
+			
         </body>
     </table>
+	<script src="script.js"></script>
     
     <div class="container">
         <div class="row">
