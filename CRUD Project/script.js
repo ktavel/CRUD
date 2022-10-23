@@ -2,56 +2,62 @@ let selectedRow = null
 
 function onFormSubmit(){
     if(validate()) {
-    let formData = readFormData();
-    if (selectedRow == null);
-    insertNewRecord(formData);
+    var formData = readFormData();
+    if (selectedRow == null){
+      insertNewRecord(formData);  
+    }   
     else {
-    if(updateRecord(formData));
-    resetForm();
+        if(updateRecord(formData)){
+            resetForm();  
+        }  
         }
     }
+    // var formData = readFormData();
+    // insertNewRecord(formData);
 }
 
 function readFormData() {
-    let formData= {};
+    var formData= {};
     formData['bikeName'] = document.getElementById('bikeName').value;
-    formData['attribute'] = document.getElementById('attribute').value;
-    formData['age'] = document.getElementById('age').value;
+    formData['Attribute'] = document.getElementById('Attribute').value;
+    formData['Age'] = document.getElementById('Age').value;
     return formData;
 }
 
 function insertNewRecord(data) {
-    let table = document.getElementById('bikeList').getElementsByTagName('tbody')[0];
-    let newRow = table.insertRow(table.length);
+    var table = document.getElementById('bikeList').getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.length);
     cell1 = newRow.insertCell(0);
     cell1.innerHTML = data.bikeName;
     cell2 = newRow.insertCell(1);
-    cell2.innerHTML = data.attribute;
+    cell2.innerHTML = data.Attribute;
     cell3 = newRow.insertCell(2);
-    cell3.innerHTML = data.age;
-    cell3 = newRow.insertCell(5);
+    cell3.innerHTML = data.Age;
+    cell3 = newRow.insertCell(3);
     cell3.innerHTML = `<a onClick="onEdit(this)">Edit</a>
     |   |   |   |   | <a onClick="onDelete(this)">Delete</a>`;
 }
+// onClick="onEdit(this)"
+// onClick="onDelete(this)"
 
 function resetForm() {
     document.getElementById('bikeName').value = '';
-    document.getElementById('attribute').value = '';
-    document.getElementById('age').value = '';
+    document.getElementById('Attribute').value = '';
+    document.getElementById('Age').value = '';
     let selectedRow = null
 }
 
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
     document.getElementById('bikeName').value = selectedRow.cells[0].innerHTML;
-    document.getElementById('attribute').value = selectedRow.cells[1].innerHTML;
-    document.getElementById('age').value = selectedRow.cells[2].innerHTML;
+    document.getElementById('Attribute').value = selectedRow.cells[1].innerHTML;
+    document.getElementById('Age').value = selectedRow.cells[2].innerHTML;
 }
 
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.bikeName;
-    selectedRow.cells[1].innerHTML = formData.attribute;
-    selectedRow.cells[2].innerHTML = formData.age;
+    selectedRow.cells[1].innerHTML = formData.Attribute;
+    selectedRow.cells[2].innerHTML = formData.Age;
 }
 
 function onDelete(td) {

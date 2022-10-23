@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        HTML CRUD with JS
+    </title>
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <!-- event.preventDefault(); -->
+                    <div>
+                        <label>Bike Name</label>
+                        <label class="validation-error hide" id="bikeNameValidationError">*</label>
+                        <input type="text" name="bikeName" id="bikeName">
+                    </div>
+                    <div>
+                        <label>Attribute</label>
+                        <input type="text" name="Attribute" id="Attribute">
+                    </div>
+                    <div>
+                        <label>Age</label>
+                        <input type="text" name="Age" id="Age">
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="bikeList">
+                    <thead>
+                        <tr>
+                            <th>Bike Name</th>
+                            <th>Attribute</th>
+                            <th>Age</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
